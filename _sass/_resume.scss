@@ -18,7 +18,8 @@
 
 // page header styles
 
-.page-header { padding: 1.5rem 0;
+.page-header {
+  padding: 1.5rem 0;
 
   .avatar {
     width: 95px;
@@ -120,13 +121,13 @@
 // resume content styles
 
 .content-section {
-  margin: 0 0 3rem;
+  margin: 0 0 2rem;
 
-  .resume-item { margin-bottom: 2rem; }
+  .resume-item { margin-bottom: 1rem; }
 
   .resume-item-title {
     @include sans_bold;
-    margin: 0 0 .75rem;
+    margin: 0 0 .5rem;
     font-size: 1.5rem;
     letter-spacing: -.05rem;
     line-height: 1;
@@ -174,5 +175,25 @@
       font-weight: 700;
       color: #333;
     }
+  }
+}
+
+@media print {
+  @page { margin: 0; }
+
+  .page-break {
+    page-break-after: always;
+  }
+
+  .print-margin {
+    margin-top: 1cm;
+  }
+
+  .print-hidden {
+    display: none;
+  }
+
+  a {
+    border: 0 !important;
   }
 }
